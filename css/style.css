@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.container-base {
+    min-height: 100vh;
+    width: 100vw;
+    background-color: #1e2d3b;
+}
+
+header {
+    display:flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    height: 80Px;
+    background-color: darkblue;
+    border-bottom: 1px solid lightgray;
+    padding: 20px;
+}
