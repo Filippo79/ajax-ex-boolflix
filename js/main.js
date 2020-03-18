@@ -18,6 +18,9 @@ $(document).ready(function() {
                     var movies = data.results;
                     for (var i = 0; i < movies.length; i++) {
                         var movie = movies[i];
+                        if (movie == 0 ) {
+                            alert('Mi dispiace cerca ancora !')}
+                            $('.search-movies').val('');
                         var infoMovie = {
                             titolo: movie.title,
                             titoloOriginale: movie.original_title,
@@ -29,7 +32,7 @@ $(document).ready(function() {
                     console.log(infoMovie);
                 },
                 error: function() {
-                    alert('Se non digiti non vedi niente!!');
+                    alert('Se non digiti Niente non vedi Niente!!');
                 }
             });
     });
