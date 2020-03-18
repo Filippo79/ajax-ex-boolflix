@@ -1,37 +1,43 @@
 $(document).ready(function() {
     //var source = $('#template-movie').html();
-    //var templateMovies = Handlebars.compile(source);
+    //var templateMovie = Handlebars.compile(source);
+    $('.click').click(function(){
+        var searchMovies = $('.search-movies').val().toLowerCase();
+        console.log(searchMovies);
+
+
+    });
 
 
     var apiBaseUrl = 'https://api.themoviedb.org/3';
 
     $.ajax({
-        url: apiBaseUrl + '/movie/550',
-        data: {
-            api_Key: '37928d22d4c593c96399a7ec5fe9874b',
-            query: 'batman',
-            language: 'it-IT'
-        },
-        method: 'GET',
-        success: function (data) {
-            //console.log(data);
-            var movies = data.response;
-            for (var i = 0; i < movies.length; i++) {
-                var movie = movies[i];
-                console.log(movie);
-                var infoMovie = {
-                    titolo: movie.title,
-                    titoloOriginale: movie.original_title,
-                    lingua: movie.original_language,
-                    voto: movie.vote_average
+            url: apiBaseUrl + '/search/movie',
+            method: 'GET',
+            data: {
+                api_key: '37928d22d4c593c96399a7ec5fe9874b',
+                query: searchMovies,
+                language: 'it-IT'
+            },
+            success: function(data) {
+                //console.log(data);
+                var movies = data.results;
+                for (var i = 0; i < movies.length; i++) {
+                    var movie = movies[i];
+                    var infoMovie = {
+                        titolo: movie.title,
+                        titoloOriginale: movie.original_title,
+                        lingua: movie.original_language,
+                        voto: movie.vote_average,
+                        //immagine: movie.logo_path
+                    }
                 }
+                //console.log(infoMovie);
+            },
+            error: function() {
+                alert('Si è verificato un errore');
             }
-        },
-        error: function() {
-            alert('Andra tutto bene....')
-        }
-
-    });
+        });
 
 
 
