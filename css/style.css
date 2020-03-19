@@ -17,6 +17,7 @@
 }
 
 header {
+    position: fixed;
     display:flex;
     justify-content: flex-end;
     align-items: center;
@@ -41,4 +42,36 @@ header {
     border-radius: 50%;
     background-color: lightgrey;
     height: 30px;
+}
+
+.container-movies {
+    display: flex;
+    margin: 0 auto;
+    height: 100%;
+    width: 80%;
+    border-radius: 10px;
+    padding: 90px;
+    flex-wrap: wrap;
+}
+
+.card {
+    text-align: center;
+    height: 300px;
+    flex-basis: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(46,58,70);
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    margin: 20px;
+ }
+
+.card h3 {
+    color: lightgrey;
+}
+
+.card span {
+    color: darkgrey;
 }

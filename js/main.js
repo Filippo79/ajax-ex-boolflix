@@ -1,6 +1,6 @@
 $(document).ready(function() {
-    //var source = $('#template-movie').html();
-    //var templateMovie = Handlebars.compile(source);
+    var source = $('#template-movie').html();
+    var templateMovie = Handlebars.compile(source);
     $('.click').click(function(){
         var searchMovies = $('.search-movies').val().toLowerCase();
         //console.log(searchMovies);
@@ -25,9 +25,11 @@ $(document).ready(function() {
                             titolo: movie.title,
                             titoloOriginale: movie.original_title,
                             lingua: movie.original_language,
-                            voto: movie.vote_average,
-                            //immagine: movie.logo_path
+                            stelle: movie.vote_average,
+                            //immagineMovies: movie.logo_path
                         }
+                        var infoMovies = templateMovie(infoMovie);
+                        $('.container-movies').append(infoMovies);
                     }
                     console.log(infoMovie);
                 },

@@ -17,15 +17,25 @@
             </header>
             <main>
                 <div class="container-movies">
+                    <!-- <div class="card"> -->
 
+                    </div>
                 </div>
             </main>
         </div>
-        <!-- <script id="template-movie" type="text/x-handlebars-template">
-            <div class="card-movie" data-genere="{{genere}}">
-                <img src="{{immagineMovies}}" alt="{{nomeMovies}} Cover">
+        <script id="template-movie" type="text/x-handlebars-template">
+            <div class="card" data-genere="{{genere}}">
+                <!-- <img src="{{immagineMovies}}" alt="{{titolo}} Cover"> -->
+                <h3>Titolo<h3/>
+                    <span>{{titolo}}<span/>
+                <h3>Titolo Originale<h3/>
+                    <span>{{titoloOriginale}}<span/>
+                <h3>Lingua<h3/>
+                    <span>{{lingua}}<span/>
+                <h3>Voto<h3/>
+                    <span>{{stelle}}<span/>
             </div>
-        </script> -->
+        </script>
         <script src="js/main.js" charset="utf-8"></script>
     </body>
 </html>
