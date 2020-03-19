@@ -31,12 +31,19 @@ $(document).ready(function() {
                         var infoMovies = templateMovie(infoMovie);
                         $('.container-movies').append(infoMovies);
                     }
-                    console.log(infoMovie);
+                    //console.log(infoMovie['stelle']);
+                    var voto = (infoMovie['stelle'] / 2 ).toFixed() ;
+                    console.log(voto);
                 },
                 error: function() {
                     alert('Se non digiti Niente non vedi Niente!!');
                 }
             });
     });
+
+
+
+
+
 
 });
