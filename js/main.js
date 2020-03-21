@@ -8,9 +8,6 @@ $(document).ready(function() {
             cerca();
         }
     });
-
-
-
     function cerca(){
         var searchMovies = $('.search-movies').val().toLowerCase();
         //console.log(searchMovies);
