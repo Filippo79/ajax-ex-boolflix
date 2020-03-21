@@ -39,12 +39,6 @@ $(document).ready(function() {
                             }
                             totaleStelle += stella;
                         }
-
-
-
-
-
-
                         var infoMovie = {
                             titolo: movie.title,
                             titoloOriginale: movie.original_title,
