@@ -12,28 +12,27 @@
     <body>
         <div class="container-base">
             <header>
-                <input class="search-movies"type="search" placeholder="Cosa cercare..">
-                <button class="click" onclick="">Click</button>
+                <input class="search-movies"type="search" placeholder="Cosa cercare.."value="Batman">
+                <button class="click" onclick="">Cerca</button>
             </header>
             <main>
                 <div class="container-movies">
-                    <!-- <div class="card"> -->
 
-                    </div>
+
+
                 </div>
             </main>
         </div>
         <script id="template-movie" type="text/x-handlebars-template">
             <div class="card" data-genere="{{genere}}">
-                <!-- <img src="{{immagineMovies}}" alt="{{titolo}} Cover"> -->
                 <h3>Titolo<h3/>
                     <span>{{titolo}}<span/>
                 <h3>Titolo Originale<h3/>
                     <span>{{titoloOriginale}}<span/>
                 <h3>Lingua<h3/>
-                    <span>{{lingua}}<span/>
+                    <img src="img/flags/{{lingua}}.png" alt="{{lingua}}">
                 <h3>Voto<h3/>
-                    <span>{{stelle}}<span/>
+                    <span>{{{voto}}}<span/>
             </div>
         </script>
         <script src="js/main.js" charset="utf-8"></script>
