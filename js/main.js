@@ -8,18 +8,19 @@ $(document).ready(function() {
             cerca();
         }
     });
-    function cerca(){
+    function cerca(){//funzione cerca Movies
         var searchMovies = $('.search-movies').val().toLowerCase();
         //$('.search-movies').val('');
         if (searchMovies.length > 0) {
-            apiSearch(searchMovies);
-            // chiamata alla funzione apiSearch
+            $('.container-movies').empty();
+            apiSearch('movie',  searchMovies);
+            apiSearch('tv',  searchMovies);
         }
     }
-    function apiSearch(searchMovies){
+    function apiSearch(tipo, searchMovies){// funzione che chiama API
         var apiBaseUrl = 'https://api.themoviedb.org/3';
         $.ajax({
-                url: apiBaseUrl + '/search/movie',
+                url: apiBaseUrl + '/search/' + tipo ,
                 method: 'GET',
                 data: {
                     api_key: '37928d22d4c593c96399a7ec5fe9874b',
@@ -36,8 +37,7 @@ $(document).ready(function() {
                 }
             });
     }
-    function infoCard(movies) {
-        $('.container-movies').empty();
+    function infoCard(movies) {//funzione che carica i dati nel container movies ( card )
         for (var i = 0; i < movies.length; i++) {
             var movie = movies[i];
             if (movie == 0 ) {
@@ -46,20 +46,19 @@ $(document).ready(function() {
 
             var infoMovie = {
                 titolo: movie.title,
+                titoloSerie: movie.name,
                 titoloOriginale: movie.original_title,
+                titoloOriginaleSerie: movie.original_name,
                 lingua: movie.original_language,
                 voto: movie.vote_average,
                 stelle: stars(movie.vote_average)
-
             };
             var infoMovies = templateMovie(infoMovie);
             $('.container-movies').append(infoMovies);
         }
         //console.log(infoMovie);
-
     }
-
-    function stars(votoStelle) {
+    function stars(votoStelle) {// funzione che gestisce e crea le stelle
         var votoStelle = Math.ceil(votoStelle / 2) ;
         var totaleStelle = '';
         for (var j = 1; j <=5;  j++) {
@@ -68,10 +67,8 @@ $(document).ready(function() {
             }else {
                  totaleStelle += '<i class="far fa-star"></i>';
             }
-
         }
         return totaleStelle ;
-
     }
 
 
