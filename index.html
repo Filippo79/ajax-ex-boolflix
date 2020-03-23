@@ -12,27 +12,26 @@
     <body>
         <div class="container-base">
             <header>
-                <input class="search-movies"type="search" placeholder="Cosa cercare.."value="trinità">
+                <input class="search-movies"type="search" placeholder="Cosa cercare.."value="">
                 <button class="click" onclick="">Cerca</button>
             </header>
             <main>
-                <div class="container-movies">
-
-
-
-                </div>
+                <div class="container-movies"></div>
             </main>
         </div>
         <script id="template-movie" type="text/x-handlebars-template">
-            <div class="card" data-genere="{{genere}}">
-                <h3>Titolo<h3/>
-                    <span>{{titolo}}{{titoloSerie}}<span/>
-                <h3>Titolo Originale<h3/>
-                    <span>{{titoloOriginale}}{{titoloOriginaleSerie}}<span/>
-                <h3>Lingua<h3/>
-                    <img src="img/flags/{{lingua}}.png" alt="{{lingua}}">
-                <h3>Voto<h3/>
-                    <span>{{voto}}/10  {{{stelle}}}<span/>
+            <div class="card">
+                <img class="poster active"src="{{poster}}" alt="{{titoloOriginale}}{{titoloOriginaleSerie}}">
+                <div class="box-info">
+                    <h3>Titolo<h3/>
+                        <span>{{titolo}}{{titoloSerie}}<span/>
+                    <h3>Titolo Originale<h3/>
+                        <span>{{titoloOriginale}}{{titoloOriginaleSerie}}<span/>
+                    <h3>Lingua<h3/>
+                        <img src="img/flags/{{lingua}}.png" alt="{{lingua}}">
+                    <h3>Voto<h3/>
+                        <span>{{voto}}/10  {{{stelle}}}<span/>
+                </div>
             </div>
         </script>
         <script src="js/main.js" charset="utf-8"></script>

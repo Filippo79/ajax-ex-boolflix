@@ -1,16 +1,24 @@
 $(document).ready(function() {
+    var apiBaseUrl = 'https://api.themoviedb.org/3';
+    var imgBaseUrl = 'https://image.tmdb.org/t/p/';
+    var imgSize = 'w342';
     var templateMovieSrc = $('#template-movie').html();
     var templateMovie = Handlebars.compile(templateMovieSrc);
-
     $('.click').click(cerca);
     $('.search-movies').keypress(function (event) {
         if(event.key == 'Enter') {
             cerca();
         }
     });
+    /*$('.card').mouseenter(function{
+        $('.poster').addClass('active');
+    });
+    $('.card').mauseleave(function{
+        $('.poster').removeClass('active','box-info');
+    });*/
     function cerca(){//funzione cerca Movies
         var searchMovies = $('.search-movies').val().toLowerCase();
-        //$('.search-movies').val('');
+        $('.search-movies').val('');
         if (searchMovies.length > 0) {
             $('.container-movies').empty();
             apiSearch('movie',  searchMovies);
@@ -18,7 +26,6 @@ $(document).ready(function() {
         }
     }
     function apiSearch(tipo, searchMovies){// funzione che chiama API
-        var apiBaseUrl = 'https://api.themoviedb.org/3';
         $.ajax({
                 url: apiBaseUrl + '/search/' + tipo ,
                 method: 'GET',
@@ -50,6 +57,7 @@ $(document).ready(function() {
                 titoloOriginale: movie.original_title,
                 titoloOriginaleSerie: movie.original_name,
                 lingua: movie.original_language,
+                poster: poster(movie.poster_path),
                 voto: movie.vote_average,
                 stelle: stars(movie.vote_average)
             };
@@ -70,8 +78,11 @@ $(document).ready(function() {
         }
         return totaleStelle ;
     }
-
-
-
-
+    function poster(images) {
+        if( images !== null ){
+            return imgBaseUrl + imgSize + images;
+        } else {
+            return 'img/not-avaible.jpeg';
+        }
+    }
 });
