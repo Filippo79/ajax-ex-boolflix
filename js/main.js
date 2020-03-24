@@ -12,7 +12,7 @@ $(document).ready(function() {
     });
     function cerca(){//funzione cerca Movies
         var searchMovies = $('.search-movies').val().toLowerCase();
-        //$('.search-movies').val('');
+        $('.search-movies').val('');
         if (searchMovies.length > 0) {
             $('.container-movies').empty();
             apiSearch('movie',  searchMovies);
