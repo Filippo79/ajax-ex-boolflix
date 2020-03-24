@@ -10,15 +10,9 @@ $(document).ready(function() {
             cerca();
         }
     });
-    /*$('.card').mouseenter(function{
-        $('.poster').addClass('active');
-    });
-    $('.card').mauseleave(function{
-        $('.poster').removeClass('active','box-info');
-    });*/
     function cerca(){//funzione cerca Movies
         var searchMovies = $('.search-movies').val().toLowerCase();
-        $('.search-movies').val('');
+        //$('.search-movies').val('');
         if (searchMovies.length > 0) {
             $('.container-movies').empty();
             apiSearch('movie',  searchMovies);
