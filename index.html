@@ -12,8 +12,11 @@
     <body>
         <div class="container-base">
             <header>
-                <input class="search-movies"type="search" placeholder="Cosa cercare.."value="Batman">
-                <button class="click" onclick="">Cerca</button>
+                <h1>BoolFix</h1>
+                <div class="button">
+                    <input class="search-movies"type="search" placeholder="Cosa cercare.."value="Batman">
+                    <button class="click" onclick="">Cerca</button>
+                </div>
             </header>
             <main>
                 <div class="container-movies"></div>
@@ -30,6 +33,8 @@
                         <img src="img/flags/{{lingua}}.png" alt="{{lingua}}">
                     <h3>Voto<h3/>
                         <span>{{voto}}/10  {{{stelle}}}<span/>
+                    <h3>Overview<h3/>
+                        <p>{{overview}}</p>
                 </div>
                 <div class="poster overlay">
                     <img src="{{poster}}" alt="{{titoloOriginale}}{{titoloOriginaleSerie}}">

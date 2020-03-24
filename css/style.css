@@ -10,6 +10,10 @@
     clear: both;
 }
 
+body {
+    font-family: 'Rubik', sans-serif;
+}
+
 .container-base {
     min-height: 100vh;
     width: 100vw;
@@ -20,13 +24,18 @@ header {
     position: fixed;
     z-index: 1;
     display:flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
     height: 80Px;
     background-color: darkblue;
     border-bottom: 3px solid darkred;
     padding: 20px;
+}
+
+header h1 {
+    font-size: 55px;
+    color: darkred;
 }
 
 .search-movies {
@@ -69,13 +78,13 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     text-align: center;
     background-color: rgb(46,58,70);
     border: 1px solid darkred;
     border-radius: 10px;
     margin: 20px;
     cursor: pointer;
+    overflow-y: auto;
 }
 
 .card h3 {
@@ -84,6 +93,10 @@ header {
 
 .card span {
     color: darkgrey;
+}
+
+.fas.fa-star {
+    color: darkgoldenrod;
 }
 
 .poster.overlay {

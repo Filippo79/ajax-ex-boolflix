@@ -53,7 +53,8 @@ $(document).ready(function() {
                 lingua: movie.original_language,
                 poster: poster(movie.poster_path),
                 voto: movie.vote_average,
-                stelle: stars(movie.vote_average)
+                stelle: stars(movie.vote_average),
+                overview: movie.overview
             };
             var infoMovies = templateMovie(infoMovie);
             $('.container-movies').append(infoMovies);
