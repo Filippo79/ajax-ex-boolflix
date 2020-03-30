@@ -12,7 +12,7 @@ $(document).ready(function() {
     });
     function cerca(){//funzione cerca Movies
         var searchMovies = $('.search-movies').val().toLowerCase();
-        $('.search-movies').val('');
+        //$('.search-movies').val('');
         if (searchMovies.length > 0) {
             $('.container-movies').empty();
             apiSearch('movie',  searchMovies);
@@ -73,7 +73,7 @@ $(document).ready(function() {
         }
         return totaleStelle ;
     }
-    function poster(images) {
+    function poster(images) { // funzione che inserisce il poster  'immagine non presente'
         if( images !== null ){
             return imgBaseUrl + imgSize + images;
         } else {
