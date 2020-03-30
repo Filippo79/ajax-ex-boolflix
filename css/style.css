@@ -38,6 +38,12 @@ header h1 {
     color: darkred;
 }
 
+header h2 {
+    display: none;
+    font-size: 50px;
+    color: darkred;
+}
+
 .search-movies {
     width: 200px;
     height: 50px;
@@ -121,7 +127,16 @@ header h1 {
     header h1 {
         display: none;
     }
+    header h2 {
+        display: inline;
+    }
     .container-movies {
         padding-left: 20px;
+    }
+}
+
+@media screen and (max-width: 382px ) {
+    header h2 {
+        display: none;
     }
 }
